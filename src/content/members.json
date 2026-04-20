@@ -53,11 +53,15 @@
   },
   {
     "name": "Manu Arora",
-    "links": [{ "label": "Aceternity UI", "href": "https://ui.aceternity.com/" }]
+    "links": [
+      { "label": "Aceternity UI", "href": "https://ui.aceternity.com/" }
+    ]
   },
   {
     "name": "Mehedi",
-    "links": [{ "label": "Themefisher", "href": "https://www.themefisher.com/" }]
+    "links": [
+      { "label": "Themefisher", "href": "https://www.themefisher.com/" }
+    ]
   },
   {
     "name": "Michael Andreuzza",
@@ -77,7 +81,7 @@
   },
   {
     "name": "OrcDev",
-    "links": [{ "label": "OrcDev", "href": "https://www.orcdev.com/" }]
+    "links": [{ "label": "8 BitCN", "href": "https://www.8bitcn.com/" }]
   },
   {
     "name": "Pasquale Vitiello",
