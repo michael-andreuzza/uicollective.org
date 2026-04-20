@@ -1,37 +1,17 @@
 ---
-import { Image } from "astro:assets";
 import Text from "@/components/fundations/elements/Text.astro";
-
-const { url, name, image } = {
-  url: "/members/" + Astro.props.post.id,
-  name: Astro.props.post.data.name,
-  image: Astro.props.post.data.image.url,
-};
+const { name, links } = Astro.props.item;
 ---
 
-<div class="relative flex items-center gap-4 py-2">
-  <a
-    href={url}
-    title={`View profile for ${name}`}
-    aria-label={`View profile for ${name}`}
-    class="absolute inset-0 z-10"
-  ></a>
-
-  <Image
-    src={image}
-    alt={name}
-    width={1000}
-    height={1000}
-    loading="lazy"
-    decoding="async"
-    class="aspect-square size-8 rounded object-cover object-center"
-  />
-
+<div class="py-3">
   <Text
-    tag="h3"
-    variant="textBase"
-    class="mt-1 font-medium tracking-tight text-muted-foreground"
+    tag="h2"
+    variant="textXS"
+    class="font-medium tracking-tight text-foreground"
   >
     {name}
+  </Text>
+  <Text tag="p" variant="textXS" class="mt-1 text-muted-foreground">
+    {links.map((link) => link.label).join(" | ")}
   </Text>
 </div>

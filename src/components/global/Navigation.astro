@@ -5,18 +5,17 @@ import Text from "@/components/fundations/elements/Text.astro";
 
 const links = [
   { href: "/members", label: "Members" },
-  { href: "/directory", label: "Directory" },
 ];
 ---
 
 <header class="sticky top-0 z-20 bg-background/90 backdrop-blur">
-  <Wrapper variant="standard" class="py-8">
-    <div class="flex gap-4 items-end justify-between">
+  <Wrapper variant="standard" class="py-4">
+    <div class="flex gap-4 items-baseline justify-between">
       <a href="/" class="space-y-1">
         <Logo />
         <Text
           tag="span"
-          variant="textXS"
+          variant="textSM"
           class="font-medium tracking-tight text-foreground"
         >
           Uicollective.org

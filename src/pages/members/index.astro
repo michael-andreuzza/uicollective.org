@@ -1,14 +1,13 @@
 ---
-import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import MembersCard from "@/components/members/MembersCard.astro";
+import allMembers from "@/content/members.json";
 
-const allMembers = await getCollection("members");
 allMembers.sort((a, b) => {
-  const nameA = a.data.name.toLowerCase();
-  const nameB = b.data.name.toLowerCase();
+  const nameA = a.name.toLowerCase();
+  const nameB = b.name.toLowerCase();
   return nameA.localeCompare(nameB);
 });
 ---
@@ -28,12 +27,11 @@ allMembers.sort((a, b) => {
         variant="textSM"
         class="mt-2 font-medium text-muted-foreground"
       >
-        A growing group of designers, design engineers, and UI product makers
-        who want to stand behind original work and be transparent about what
-        they build.
+        Verified members who have agreed to the Charter and publicly stand
+        behind original work.
       </Text>
       <div class="mt-2 divide-y divide-border border-t border-border">
-        {allMembers.map((post) => <MembersCard post={post} />)}
+        {allMembers.map((item) => <MembersCard item={item} />)}
       </div>
     </Wrapper>
   </section>

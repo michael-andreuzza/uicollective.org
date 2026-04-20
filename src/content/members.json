@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Ajay Patel & Anand Patel",
+    "links": [
+      { "label": "ThemeSelection", "href": "https://themeselection.com/" },
+      { "label": "Shadcn Studio", "href": "https://shadcnstudio.com/" }
+    ]
+  },
+  {
+    "name": "Dill",
+    "links": [{ "label": "Magic UI", "href": "https://magicui.design/" }]
+  },
+  {
+    "name": "David Haz",
+    "links": [{ "label": "React Bits", "href": "https://reactbits.dev/" }]
+  },
+  {
+    "name": "Erfan",
+    "links": [{ "label": "Pentaclay", "href": "https://pentaclay.com/" }]
+  },
+  {
+    "name": "Frank Spin",
+    "links": [{ "label": "Themes.dev", "href": "https://themes.dev/" }]
+  },
+  {
+    "name": "Gxuri",
+    "links": [{ "label": "Skiper UI", "href": "https://skiper-ui.com/" }]
+  },
+  {
+    "name": "Hamish O'Neill",
+    "links": [{ "label": "Shadcraft", "href": "https://shadcraft.com/" }]
+  },
+  {
+    "name": "Hayden Bleasel",
+    "links": [
+      { "label": "Vercel", "href": "https://vercel.com/" },
+      { "label": "AI SDK Elements", "href": "https://ai-sdk.dev/elements" }
+    ]
+  },
+  {
+    "name": "John Champ",
+    "links": [
+      { "label": "Pixelcave", "href": "https://pixelcave.com/" },
+      { "label": "Tailkit", "href": "https://tailkit.com/" }
+    ]
+  },
+  {
+    "name": "Jordan",
+    "links": [
+      { "label": "Cult UI", "href": "http://cult-ui.com/" },
+      { "label": "AI SDK Agents", "href": "https://www.aisdkagents.com/" }
+    ]
+  },
+  {
+    "name": "Manu Arora",
+    "links": [{ "label": "Aceternity UI", "href": "https://ui.aceternity.com/" }]
+  },
+  {
+    "name": "Mehedi",
+    "links": [{ "label": "Themefisher", "href": "https://www.themefisher.com/" }]
+  },
+  {
+    "name": "Michael Andreuzza",
+    "links": [
+      { "label": "Lexington Themes", "href": "https://lexingtonthemes.com/" },
+      { "label": "Bearnie", "href": "https://bearnie.dev/" },
+      { "label": "Oxbow UI", "href": "https://oxbowui.com/" }
+    ]
+  },
+  {
+    "name": "Mike Harmer",
+    "links": [{ "label": "Jekyll Themes", "href": "https://jekyllthemes.io/" }]
+  },
+  {
+    "name": "Méschac Irung",
+    "links": [{ "label": "Tailark", "href": "https://tailark.com/" }]
+  },
+  {
+    "name": "OrcDev",
+    "links": [{ "label": "OrcDev", "href": "https://www.orcdev.com/" }]
+  },
+  {
+    "name": "Pasquale Vitiello",
+    "links": [
+      { "label": "COSS UI", "href": "https://coss.com/ui/docs" },
+      { "label": "Cruip", "href": "https://cruip.com/" }
+    ]
+  },
+  {
+    "name": "Rob Austin",
+    "links": [
+      { "label": "Shadcnblocks", "href": "https://shadcnblocks.com/" },
+      { "label": "ZeroStatic", "href": "https://zerostatic.io/" }
+    ]
+  }
+]

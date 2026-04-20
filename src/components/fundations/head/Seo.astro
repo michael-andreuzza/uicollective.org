@@ -22,12 +22,6 @@ const routeDefaults: Record<
       "Browse Uicollective members who publicly stand behind original work and transparent authorship.",
     pageType: "collection",
   },
-  "/directory": {
-    title: "Directory",
-    description:
-      "A public directory showing the current status of selected sellers, products, and creators tracked by Uicollective.",
-    pageType: "collection",
-  },
   "/404": {
     title: "Page Not Found",
     description: "The page you were looking for could not be found.",
@@ -42,20 +36,12 @@ const {
   noindex = false,
 } = Astro.props;
 
-const matchedDefault =
-  routeDefaults[pathname] ||
-  (pathname.startsWith("/members/")
-    ? {
-        title: "Member",
-        description: "A member profile in the Uicollective directory.",
-        pageType: "profile",
-      }
-    : {
-        title: "Uicollective",
-        description:
-          "A standards initiative against counterfeit UI resale, with a public trust badge for designers, design engineers, and UI product makers.",
-        pageType: "webpage",
-      });
+const matchedDefault = routeDefaults[pathname] || {
+  title: "Uicollective",
+  description:
+    "A standards initiative against counterfeit UI resale, with a public trust badge for designers, design engineers, and UI product makers.",
+  pageType: "webpage",
+};
 
 const resolvedTitle = title || matchedDefault.title;
 const resolvedDescription = description || matchedDefault.description;
