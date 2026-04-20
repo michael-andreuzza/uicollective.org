@@ -4,7 +4,11 @@ const { name, links } = Astro.props.item;
 ---
 
 <div class="py-3">
-  <Text tag="h2" variant="textXS" class="font-medium text-foreground">
+  <Text
+    tag="h2"
+    variant="textXS"
+    class="font-medium tracking-tight text-foreground"
+  >
     {name}
   </Text>
   <Text tag="p" variant="textXS" class="mt-1 text-muted-foreground">
