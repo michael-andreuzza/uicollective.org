@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from "astro:content";
+import TrustedLayout from "@/layouts/TrustedLayout.astro";
+
+export async function getStaticPaths() {
+  const trusted = await getCollection("trusted");
+
+  return trusted.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+    trailingSlash: false,
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<TrustedLayout frontmatter={page.data}>
+  <Content />
+</TrustedLayout>

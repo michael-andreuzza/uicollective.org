@@ -1,12 +1,41 @@
 ---
+import Logo from "@/components/assets/Logo.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+
+const links = [
+  { href: "/trusted", label: "Trusted Members" },
+  { href: "/team", label: "Team" },
+  { href: "/directory", label: "Directory" },
+];
 ---
 
-<header>
-  <Wrapper variant="standard">
-    <div class="flex items-center justify-between py-2">
-      <a href="/">Home</a>
-      <a href="/system/overview">Overview</a>
+<header class="sticky top-0 z-20 bg-background/90 backdrop-blur">
+  <Wrapper variant="standard" class="py-8">
+    <div class="flex gap-4 items-end justify-between">
+      <a href="/" class="space-y-1">
+        <Logo />
+        <Text
+          tag="span"
+          variant="textSM"
+          class="font-medium tracking-tight text-foreground"
+        >
+          Uicollective
+        </Text>
+      </a>
+
+      <div class="flex flex-wrap items-center gap-3 lg:justify-end">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="text-xs text-muted-foreground transition hover:text-foreground font-medium"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
     </div>
   </Wrapper>
 </header>

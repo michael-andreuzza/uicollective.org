@@ -1,0 +1,20 @@
+---
+description: Astro UI composition and spacing conventions for Uicollective
+globs: **/*.{astro,css,md,mdx,ts,tsx,js,jsx}
+alwaysApply: false
+---
+
+# Uicollective UI Conventions
+
+- Organize each page with its own section component folder, for example `components/about/*`.
+- Page files should compose imported sections rather than containing all section markup inline.
+- Use semantic Tailwind v4 tokens from `src/styles/global.css` instead of ad hoc color classes.
+- Never use Tailwind `@apply` in this project.
+- Treat `mt-*` as the default spacing utility and avoid `mb-*`.
+- Keep section spacing consistent through per-section `Wrapper` usage and top-margin rhythm.
+- Prefer existing `Button` variants instead of inline button styling.
+- Prefer `Text` variants instead of hardcoded typography patterns when possible.
+- Do not add eyebrow labels or uppercase tracked helper text.
+- Do not use `tracking-wide`.
+- Do not design sections around colored background bands.
+- Make responsive behavior with CSS first and vanilla JavaScript only when needed.

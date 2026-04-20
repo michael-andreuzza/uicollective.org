@@ -1,0 +1,16 @@
+---
+description: Reuse fundation primitives and avoid ad hoc UI components
+alwaysApply: true
+---
+
+# Foundation Primitives
+
+- Prefer existing primitives before building new UI pieces.
+- Do not hardcode replacement components for `Button`, `Text`, `Wrapper`, layout, or head primitives when local fundation components already exist.
+- Every public page should have its own page-specific component folder for its sections.
+- Keep page files focused on composition: import sections and assemble the page.
+- `Wrapper` is required for page section structure unless there is a documented exception.
+- Each section owns its own `Wrapper`.
+- Do not use one shared `Wrapper` around multiple sections in a page.
+- Compose pages from the existing system first; only add a new primitive when the current set cannot express the need cleanly.
+- Avoid one-off card, button, and text abstractions that bypass the local fundation layer.

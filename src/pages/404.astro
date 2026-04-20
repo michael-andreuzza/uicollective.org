@@ -5,13 +5,22 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Button from "@/components/fundations/elements/Button.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 ---
-<BaseLayout hideNavigation={true} hideFooter={true}>
+
+<BaseLayout
+  hideNavigation={true}
+  hideFooter={true}
+  title="Page Not Found"
+  description="The page you were looking for could not be found."
+  pageType="webpage"
+  noindex={true}
+>
   <section>
-    <Wrapper variant="standard">
-      <Text tag="h1" variant="textLG">
-        404
-      </Text>
-      <Button isLink={true} href="/" size="xs" variant="muted">
+    <Wrapper
+      variant="standard"
+      class="py-24 text-center h-screen flex flex-col items-center justify-center"
+    >
+      <Text tag="h1" variant="textXL"> 404 </Text>
+      <Button isLink={true} href="/" size="xs" variant="muted" class="mt-4">
         Go back gome
       </Button>
     </Wrapper>

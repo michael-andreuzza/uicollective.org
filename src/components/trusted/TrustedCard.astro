@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import Text from "@/components/fundations/elements/Text.astro";
+const { url, name, image } = {
+  url: "/trusted/" + Astro.props.post.id,
+  name: Astro.props.post.data.name,
+  image: Astro.props.post.data.image.url,
+};
+---
+
+<div class="relative flex items-center gap-4 py-2">
+  <a
+    href={url}
+    title={`View profile for ${name}`}
+    aria-label={`View profile for ${name}`}
+    class="absolute inset-0 z-10"></a>
+
+  <Image
+    src={image}
+    alt={name}
+    width={1000}
+    height={1000}
+    loading="lazy"
+    decoding="async"
+    class="aspect-square object-cover object-center rounded size-8"
+  />
+
+  <Text
+    tag="h3"
+    variant="textBase"
+    class="font-medium tracking-tight text-muted-foreground mt-1">{name}</Text
+  >
+</div>

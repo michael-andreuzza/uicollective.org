@@ -2,31 +2,95 @@
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 @plugin "tailwind-scrollbar-hide";
+
 @theme {
-  /* Typography */
-  --font-sans: "Inter", sans-serif;
-  /* Accent */
-  --color-accent-50: oklch(92.98% 0.035 285.7);
-  --color-accent-100: oklch(86.22% 0.07 284.83);
-  --color-accent-200: oklch(72.58% 0.146 282.13);
-  --color-accent-300: oklch(59.81% 0.221 277.36);
-  --color-accent-400: oklch(49.73% 0.283 269.85);
-  --color-accent-500: oklch(45.2% 0.313 264.05);
-  --color-accent-600: oklch(38.21% 0.265 264.05);
-  --color-accent-700: oklch(30.87% 0.214 264.05);
-  --color-accent-800: oklch(23.07% 0.16 264.05);
-  --color-accent-900: oklch(14.51% 0.101 264.05);
-  --color-accent-950: oklch(9.65% 0.067 264.05);
-  /* Base */
-  --color-base-50: oklch(0.985 0 0);
-  --color-base-100: oklch(0.97 0 0);
-  --color-base-200: oklch(0.922 0 0);
-  --color-base-300: oklch(0.87 0 0);
-  --color-base-400: oklch(0.708 0 0);
-  --color-base-500: oklch(0.556 0 0);
-  --color-base-600: oklch(0.439 0 0);
-  --color-base-700: oklch(0.371 0 0);
-  --color-base-800: oklch(0.269 0 0);
-  --color-base-900: oklch(0.205 0 0);
-  --color-base-950: oklch(0.145 0 0);
+  --font-sans: "Geist", sans-serif;
+  --font-display: "Geist", sans-serif;
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.209 0.006 271.116);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.209 0.006 271.116);
+  --color-popover: oklch(1 0 0);
+  --color-popover-foreground: oklch(0.209 0.006 271.116);
+  --color-primary: oklch(0.205 0 0);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.619 0.209 255.623);
+  --color-secondary-foreground: oklch(0.985 0 0);
+  --color-muted-surface: oklch(0.982 0 0);
+  --color-muted-foreground: oklch(0.47 0.003 345.31);
+  --color-accent: oklch(0.659 0.23 35.2);
+  --color-accent-dark: oklch(0.602 0.203 32.1);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-border: oklch(0.928 0 0);
+  --color-input: oklch(0.922 0 0);
+  --color-ring: oklch(0.708 0 0);
+  --color-dark-surface: var(--color-foreground);
+  --color-foreground-on-dark: var(--color-background);
+  --color-border-on-dark: oklch(0.405 0 0);
+  --color-muted-foreground-on-dark: oklch(0.751 0 0);
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-danger: var(--status-danger);
+  
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted-surface: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.659 0.23 35.2);
+  --accent-dark: oklch(0.602 0.203 32.1);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+  --status-success: oklch(0.627 0.18 149.214);
+  --status-warning: oklch(0.768 0.171 83.295);
+  --status-danger: oklch(0.637 0.237 25.331);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted-surface: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.659 0.23 35.2);
+  --accent-dark: oklch(0.602 0.203 32.1);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.556 0 0);
+  --status-success: oklch(0.724 0.15 149.214);
+  --status-warning: oklch(0.823 0.144 83.295);
+  --status-danger: oklch(0.704 0.191 22.216);
+}
+
+:root {
+  font-family: Geist, sans-serif;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }

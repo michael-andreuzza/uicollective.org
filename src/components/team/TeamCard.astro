@@ -3,36 +3,34 @@
 import { Image } from "astro:assets";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
-const { url, name, image, role } = {
-  url: "/team/" + Astro.props.post.id,
+const { name, image, role } = {
+
   name: Astro.props.post.data.name,
   role: Astro.props.post.data.role,
   image: Astro.props.post.data.image.url,
 };
 ---
 
-<div class="relative">
-  <a
-    href={url}
-    title={`View profile for ${name}`}
-    aria-label={`View profile for ${name}`}
-    class="absolute inset-0 z-10"></a>
-
+<div class=" flex items-center gap-4 py-2">
+  
   <Image
     src={image}
     alt={name}
     width={1000}
-    height={100}
+    height={1000}
     loading="lazy"
     decoding="async"
-    class="object-cover object-center w-full aspect-square"
+    class="size-8 rounded aspect-square object-cover object-center"
   />
-
-  <div class="mt-4">
-    <Text tag="h3" variant="textBase" class="font-medium text-base-900">
+  <div>
+    <Text
+      tag="h3"
+      variant="textBase"
+      class="font-medium tracking-tight text-muted-foreground"
+    >
       {name}
     </Text>
-    <Text tag="p" variant="textSM" class="text-base-600 mt-1">
+    <Text tag="p" variant="textXS" class="text-muted-foreground">
       {role}
     </Text>
   </div>

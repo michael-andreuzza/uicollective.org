@@ -1,31 +1,142 @@
 ---
 import { AstroSeo } from "@lexingtonthemes/seo";
+
+const site = "https://uicollective.org";
+const pathname = Astro.url.pathname || "/";
+const canonical = `${site}${pathname}`;
+const openGraphImage = `${site}/opengraph/facebook.png`;
+
+const routeDefaults: Record<
+  string,
+  { title: string; description: string; pageType?: string }
+> = {
+  "/": {
+    title: "Uicollective",
+    description:
+      "A standards initiative against counterfeit UI resale, with a public trust badge for designers, design engineers, and UI product makers.",
+    pageType: "website",
+  },
+  "/trusted": {
+    title: "Trusted Members",
+    description:
+      "Browse trusted Uicollective members who publicly stand behind original work and transparent authorship.",
+    pageType: "collection",
+  },
+  "/team": {
+    title: "Team",
+    description:
+      "Meet the people behind Uicollective and the work shaping the initiative.",
+    pageType: "collection",
+  },
+  "/directory": {
+    title: "Directory",
+    description:
+      "A public directory showing the current status of selected sellers, products, and creators tracked by Uicollective.",
+    pageType: "collection",
+  },
+  "/404": {
+    title: "Page Not Found",
+    description: "The page you were looking for could not be found.",
+    pageType: "webpage",
+  },
+};
+
+const {
+  title,
+  description,
+  pageType,
+  noindex = false,
+} = Astro.props;
+
+const matchedDefault =
+  routeDefaults[pathname] ||
+  (pathname.startsWith("/trusted/")
+    ? {
+        title: "Trusted Member",
+        description: "A trusted member profile in the Uicollective directory.",
+        pageType: "profile",
+      }
+    : pathname.startsWith("/team/")
+      ? {
+          title: "Team Member",
+          description: "A team member profile for the people behind Uicollective.",
+          pageType: "profile",
+        }
+      : {
+          title: "Uicollective",
+          description:
+            "A standards initiative against counterfeit UI resale, with a public trust badge for designers, design engineers, and UI product makers.",
+          pageType: "webpage",
+        });
+
+const resolvedTitle = title || matchedDefault.title;
+const resolvedDescription = description || matchedDefault.description;
+const resolvedPageType = pageType || matchedDefault.pageType || "webpage";
+
+const jsonLd = [
+  ...(pathname === "/"
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Uicollective",
+          url: site,
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Uicollective",
+          url: site,
+        },
+      ]
+    : []),
+  {
+    "@context": "https://schema.org",
+    "@type":
+      resolvedPageType === "profile"
+        ? "ProfilePage"
+        : resolvedPageType === "collection"
+          ? "CollectionPage"
+          : "WebPage",
+    name: resolvedTitle,
+    description: resolvedDescription,
+    url: canonical,
+    image: openGraphImage,
+    isPartOf: {
+      "@type": "WebSite",
+      name: "Uicollective",
+      url: site,
+    },
+  },
+];
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A detailed description of your page content."
-  canonical="https://yourwebsite.com/current-page"
+  title={resolvedTitle}
+  description={resolvedDescription}
+  canonical={canonical}
+  noindex={noindex}
+  nofollow={noindex}
   openGraph={{
-    url: "https://yourwebsite.com/current-page",
-    title: "Your Page Title",
-    description: "A detailed description of your page content.",
-    images: [
-      {
-        url: "https://yourwebsite.com/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Open Graph Image Alt",
-        type: "image/jpeg",
-      },
-    ],
-    site_name: "Your Site Name",
+    url: canonical,
+    title: resolvedTitle,
+    description: resolvedDescription,
+    site_name: "Uicollective",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: openGraphImage,
+        width: 1200,
+        height: 630,
+        alt: "Uicollective",
+      },
+    ],
   }}
   twitter={{
-    handle: "@yourhandle",
-    site: "@yourwebsite",
+    handle: "@uicollective",
+    site: "@uicollective",
     cardType: "summary_large_image",
   }}
+  jsonLd={jsonLd}
 />

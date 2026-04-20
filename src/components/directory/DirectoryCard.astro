@@ -1,0 +1,49 @@
+---
+import Text from "@/components/fundations/elements/Text.astro";
+
+const { name, domain, status, updatedAt } = Astro.props.item;
+
+const statusClasses = {
+  Trusted: " bg-status-success/5 text-status-success",
+  "Under Review": " bg-muted-surface text-muted-foreground",
+  "Not Verified": " bg-status-warning/2 text-status-warning",
+  Removed: "bg-status-danger/5 text-status-danger",
+};
+---
+
+<div class="grid gap-3 py-3 lg:grid-cols-2 items-end lg:gap-4">
+  <div>
+    <Text tag="p" variant="textXS" class="sr-only">
+      <time datetime={updatedAt}>
+        {
+          new Date(updatedAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }
+      </time>
+    </Text>
+    <Text
+      tag="h2"
+      variant="textXS"
+      class="font-medium tracking-tight text-foreground"
+    >
+      {name}
+    </Text>
+    <Text tag="p" variant="textXS" class="mt-1 text-muted-foreground">
+      {domain}
+    </Text>
+  </div>
+
+  <div class="lg:justify-self-end">
+    <span
+      class:list={[
+        "inline-flex rounded-full px-2.5 py-1 text-[0.65rem] ",
+        statusClasses[status],
+      ]}
+    >
+      {status}
+    </span>
+  </div>
+</div>

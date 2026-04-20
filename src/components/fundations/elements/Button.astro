@@ -10,36 +10,33 @@ const {
   ...rest
 } = Astro.props;
 const defaultClass = [
-  "text-white",
-  "bg-linear-to-t",
-  "from-base-900",
-  "to-base-800",
-  "hover:from-base-800",
-  "hover:to-base-900",
-  "focus:outline-base-300",
+  "text-foreground-on-dark",
+  "bg-dark-surface",
+  "hover:bg-dark-surface/90",
+  "focus:outline-ring",
 ];
 const accentClass = [
-  "text-white",
-  "bg-accent-600",
-  "hover:bg-accent-500",
-  "focus:outline-accent-600",
+  "text-foreground-on-dark",
+  "bg-accent",
+  "hover:bg-accent-dark",
+  "focus:outline-accent-dark",
 ];
 const mutedClass = [
-  "text-base-950",
-  "bg-base-50",
-  "hover:bg-base-100",
-  "focus:outline-base-300",
+  "text-foreground",
+  "bg-muted-surface",
+  "hover:text-muted-foreground",
+  "focus:outline-ring",
 ];
 
 // Size
 const sizes = {
-  xxs: ["h-7.5", "px-5", "py-2", "text-xs"],
-  xs: ["h-8", "px-6", "py-3", "text-xs"],
-  sm: ["h-9", "px-6", "py-3", "text-sm"],
-  base: ["h-10", "px-8", "py-4", "text-base"],
-  md: ["h-11", "px-8", "py-4", "text-md"],
-  lg: ["h-12", "px-8", "py-4", "text-lg"],
-  xl: ["h-13", "px-8", "py-4", "text-lg"],
+  xxs: ["h-6", "px-2", "py-2", "text-xs"],
+  xs: ["h-7", "px-3", "py-3", "text-xs"],
+  sm: ["h-8", "px-3", "py-3", "text-sm"],
+  base: ["h-10", "px-3", "py-2", "text-base"],
+  md: ["h-11", "px-3", "py-2", "text-base"],
+  lg: ["h-12", "px-3", "py-2", "text-lg"],
+  xl: ["h-14", "px-3", "py-2", "text-lg"],
 };
 // Icon size
 const iconSizes = {
@@ -72,12 +69,12 @@ const baseClass = [
   "flex",
   "justify-center",
   "text-center",
-  "rounded-full",
+  "rounded-lg",
   "font-medium",
   "items-center",
-  "duration-500",
-  "ease-in-out",
-  "transition-all",
+  "duration-300",
+  "ease-out",
+  "transition",
   "focus:outline-2",
   "focus:outline-offset-4",
 ];
