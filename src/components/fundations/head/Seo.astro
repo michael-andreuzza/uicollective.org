@@ -16,16 +16,10 @@ const routeDefaults: Record<
       "A standards initiative against counterfeit UI resale, with a public trust badge for designers, design engineers, and UI product makers.",
     pageType: "website",
   },
-  "/trusted": {
-    title: "Trusted Members",
+  "/members": {
+    title: "Members",
     description:
-      "Browse trusted Uicollective members who publicly stand behind original work and transparent authorship.",
-    pageType: "collection",
-  },
-  "/team": {
-    title: "Team",
-    description:
-      "Meet the people behind Uicollective and the work shaping the initiative.",
+      "Browse Uicollective members who publicly stand behind original work and transparent authorship.",
     pageType: "collection",
   },
   "/directory": {
@@ -50,24 +44,18 @@ const {
 
 const matchedDefault =
   routeDefaults[pathname] ||
-  (pathname.startsWith("/trusted/")
+  (pathname.startsWith("/members/")
     ? {
-        title: "Trusted Member",
-        description: "A trusted member profile in the Uicollective directory.",
+        title: "Member",
+        description: "A member profile in the Uicollective directory.",
         pageType: "profile",
       }
-    : pathname.startsWith("/team/")
-      ? {
-          title: "Team Member",
-          description: "A team member profile for the people behind Uicollective.",
-          pageType: "profile",
-        }
-      : {
-          title: "Uicollective",
-          description:
-            "A standards initiative against counterfeit UI resale, with a public trust badge for designers, design engineers, and UI product makers.",
-          pageType: "webpage",
-        });
+    : {
+        title: "Uicollective",
+        description:
+          "A standards initiative against counterfeit UI resale, with a public trust badge for designers, design engineers, and UI product makers.",
+        pageType: "webpage",
+      });
 
 const resolvedTitle = title || matchedDefault.title;
 const resolvedDescription = description || matchedDefault.description;

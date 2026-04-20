@@ -1,11 +1,11 @@
 ---
 import { getCollection, render } from "astro:content";
-import TrustedLayout from "@/layouts/TrustedLayout.astro";
+import MembersLayout from "@/layouts/MembersLayout.astro";
 
 export async function getStaticPaths() {
-  const trusted = await getCollection("trusted");
+  const members = await getCollection("members");
 
-  return trusted.map((page) => ({
+  return members.map((page) => ({
     params: { slug: page.id },
     props: { page },
     trailingSlash: false,
@@ -16,6 +16,6 @@ const { page } = Astro.props;
 const { Content } = await render(page);
 ---
 
-<TrustedLayout frontmatter={page.data}>
+<MembersLayout frontmatter={page.data}>
   <Content />
-</TrustedLayout>
+</MembersLayout>

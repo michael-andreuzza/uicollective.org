@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import Text from "@/components/fundations/elements/Text.astro";
+
 const { url, name, image } = {
-  url: "/trusted/" + Astro.props.post.id,
+  url: "/members/" + Astro.props.post.id,
   name: Astro.props.post.data.name,
   image: Astro.props.post.data.image.url,
 };
@@ -13,7 +14,8 @@ const { url, name, image } = {
     href={url}
     title={`View profile for ${name}`}
     aria-label={`View profile for ${name}`}
-    class="absolute inset-0 z-10"></a>
+    class="absolute inset-0 z-10"
+  ></a>
 
   <Image
     src={image}
@@ -22,12 +24,14 @@ const { url, name, image } = {
     height={1000}
     loading="lazy"
     decoding="async"
-    class="aspect-square object-cover object-center rounded size-8"
+    class="aspect-square size-8 rounded object-cover object-center"
   />
 
   <Text
     tag="h3"
     variant="textBase"
-    class="font-medium tracking-tight text-muted-foreground mt-1">{name}</Text
+    class="mt-1 font-medium tracking-tight text-muted-foreground"
   >
+    {name}
+  </Text>
 </div>

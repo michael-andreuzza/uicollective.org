@@ -1,14 +1,12 @@
 ---
-// Fundations
+import { getCollection } from "astro:content";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
-// Components
-import TeamCard from "@/components/team/TeamCard.astro";
-// Content
-import { getCollection } from "astro:content";
-const allTeam = await getCollection("team");
-allTeam.sort((a, b) => {
+import MembersCard from "@/components/members/MembersCard.astro";
+
+const allMembers = await getCollection("members");
+allMembers.sort((a, b) => {
   const nameA = a.data.name.toLowerCase();
   const nameB = b.data.name.toLowerCase();
   return nameA.localeCompare(nameB);
@@ -23,18 +21,19 @@ allTeam.sort((a, b) => {
         variant="textBase"
         class="text-foreground font-medium text-balance"
       >
-        Team
+        Members
       </Text>
       <Text
         tag="p"
         variant="textSM"
         class="mt-2 font-medium text-muted-foreground"
       >
-        The people behind Uicollective and the work shaping how the initiative
-        is built and shared.
+        A growing group of designers, design engineers, and UI product makers
+        who want to stand behind original work and be transparent about what
+        they build.
       </Text>
       <div class="mt-2 divide-y divide-border border-t border-border">
-        {allTeam.map((post) => <TeamCard post={post} />)}
+        {allMembers.map((post) => <MembersCard post={post} />)}
       </div>
     </Wrapper>
   </section>

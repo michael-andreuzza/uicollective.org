@@ -3,12 +3,13 @@ import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
 const { frontmatter } = Astro.props;
 
-const title = `${frontmatter.name} | Trusted Members`;
+const title = `${frontmatter.name} | Members`;
 const description =
   frontmatter.bio ||
-  `${frontmatter.name} is listed in the Uicollective trusted members directory.`;
+  `${frontmatter.name} is listed in the Uicollective members directory.`;
 ---
 
 <BaseLayout title={title} description={description} pageType="profile">
@@ -41,13 +42,15 @@ const description =
           </Text>
         </div>
       </div>
-      <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <div>
           <Text
             tag="h2"
             variant="textBase"
-            class="font-medium tracking-tight text-foreground">Projects</Text
+            class="font-medium tracking-tight text-foreground"
           >
+            Projects
+          </Text>
           <div class="mt-2 flex flex-col gap-2">
             {
               frontmatter.projects.map((project) => (
@@ -65,8 +68,10 @@ const description =
           <Text
             tag="h2"
             variant="textBase"
-            class="font-medium tracking-tight text-foreground">Socials</Text
+            class="font-medium tracking-tight text-foreground"
           >
+            Socials
+          </Text>
           {
             frontmatter.socials?.length > 0 && (
               <div class="mt-2 flex flex-col gap-2">

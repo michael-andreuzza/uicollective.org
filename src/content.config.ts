@@ -1,28 +1,8 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
-const team = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/team" }),
-  schema: ({ image }) =>
-    z.object({
-      name: z.string(),
-      role: z.string().optional(),
-      image: z.object({
-        url: image(),
-        alt: z.string(),
-      }),
-      socials: z
-        .array(
-          z.object({
-            label: z.string(),
-            href: z.string(),
-          })
-        )
-        .optional(),
-    }),
-});
-const trusted = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/trusted" }),
+const members = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/members" }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -71,8 +51,7 @@ const legal = defineCollection({
   }),
 });
 export const collections = {
-  team,
-  trusted,
+  members,
   posts,
   legal,
 };
