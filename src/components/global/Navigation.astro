@@ -6,12 +6,13 @@ import Text from "@/components/fundations/elements/Text.astro";
 const links = [
   { href: "/members", label: "Members" },
   { href: "/collective-charter", label: "Collective Charter" },
+  { href: "/copyright-guide", label: "Copyright Guide" },
 ];
 ---
 
 <header class="sticky top-0 z-20 bg-background/90 backdrop-blur">
   <Wrapper variant="standard" class="py-4">
-    <div class="flex gap-4 items-baseline justify-between">
+    <div class="flex flex-wrap gap-4 items-baseline justify-between">
       <a href="/" class="space-y-1">
         <Logo />
         <Text

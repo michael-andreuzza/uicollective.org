@@ -1,0 +1,352 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+<BaseLayout
+  title="Copyright Guide"
+  description="How the UI Collective handles copyright and infringement claims, with steps for external parties and a reference for classifying common scenarios."
+  pageType="webpage"
+>
+  <section>
+    <Wrapper variant="standard" class="py-12">
+      <Text
+        tag="h1"
+        variant="textBase"
+        class="text-foreground font-medium text-balance"
+      >
+        Guide to Copyright &amp; Infringement Claims
+      </Text>
+
+      <Wrapper variant="prose" class="mt-2 pt-2 border-t border-border">
+        <h3>How We Handle Claims</h3>
+
+        <h4>Claims against members</h4>
+        <p>
+          For concerns involving fellow members, follow the dispute resolution
+          process outlined in the <a href="/collective-charter">Charter</a> —
+          private resolution first, then facilitated discussion, then collective
+          review if needed.
+        </p>
+
+        <h4>Claims against external parties</h4>
+        <ol>
+          <li>
+            <strong>Wait 24 hours.</strong> When we see our work copied,
+            it&apos;s easy to react emotionally. If you just discovered the
+            issue, give yourself time before acting.
+          </li>
+          <li>
+            <strong>Check your assumptions.</strong> Could this be coincidence,
+            convergent design, or a shared reference?
+          </li>
+          <li>
+            <strong>Assess the illegality.</strong> Use the classification table
+            below. If it falls in the &quot;generally legal&quot; range, consider
+            whether a claim is worth the effort. Claims against &quot;generally
+            legal&quot; issues will typically be enforced using public shaming and
+            reputation damage.
+          </li>
+          <li>
+            <strong>Gather evidence.</strong> Before making any claim, document
+            everything. Take screenshots, archive URLs, save code comparisons, and
+            record timestamps. This is critical — once a claim is made, bad
+            actors will often attempt to sanitize their work by removing,
+            altering, or redeploying the infringing material. Your evidence needs
+            to be captured before they know you&apos;re looking.
+          </li>
+          <li>
+            <strong>Present your concern clearly and professionally.</strong> Any
+            claim should include:
+            <ul>
+              <li>What was allegedly copied (with links or screenshots).</li>
+              <li>
+                What the original work is (with links or proof of prior
+                publication).
+              </li>
+              <li>
+                Why you believe this goes beyond legitimate inspiration.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Take action.</strong> Members may enforce their rights
+            independently at any time. When doing so:
+            <ul>
+              <li>
+                Conduct all formal communications in writing — email, platform
+                messages, or legal notices.
+              </li>
+              <li>
+                Save copies of all correspondence. If communicating through a
+                platform, screenshot the messages in case they are deleted.
+              </li>
+              <li>
+                If seeking Collective assistance, this documentation is what
+                enables the membership to assess the situation and respond
+                effectively. Follow the process outlined in the Charter —
+                provide your documentation, allow the Collective to assess, and
+                support a proportional response.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Request Collective assistance.</strong> If individual
+            enforcement has been insufficient, or the issue affects multiple
+            members, bring it to the Collective. Your documentation from the
+            previous steps is what enables the membership to act. The Collective
+            will review your case and decide on a proportional response, which may
+            include:
+            <ul>
+              <li>Advice and strategy on next steps.</li>
+              <li>
+                A coordinated private communication to the external party.
+              </li>
+              <li>
+                A coordinated public statement on behalf of the membership.
+              </li>
+              <li>
+                Platform reporting on behalf of multiple affected members.
+              </li>
+              <li>Shared legal resources or legal referral.</li>
+              <li>
+                No collective action, if the evidence does not warrant it or the
+                matter is better handled individually.
+              </li>
+            </ul>
+          </li>
+        </ol>
+
+        <hr />
+
+        <h3>Common Scenarios &amp; How They&apos;re Classified</h3>
+        <p>
+          The following is a reference guide for evaluating copyright and
+          infringement claims. Not every situation is black and white — context,
+          degree, and intent all matter.
+        </p>
+
+        <h3>Clearly Illegal</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Breaking the terms of a license</strong></td>
+              <td>Illegal. Always considered infringement.</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Reselling a purchased template/code as-is</strong>
+              </td>
+              <td>
+                Illegal. Buying a competitor&apos;s template and selling it
+                unchanged.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Likely Illegal / Unethical</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong
+                  >Slightly modifying a purchased template and reselling</strong
+                >
+              </td>
+              <td>
+                Likely illegal / unethical. Changing a few colors or images and
+                marketing it as your own.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong
+                  >Using AI to remix purchased template/code and reselling</strong
+                >
+              </td>
+              <td>
+                Likely illegal / likely unethical. Inputting competitor code into
+                AI, tweaking the output, and selling it. The use of AI as an
+                intermediary does not change the underlying obligation to respect
+                licenses and intellectual property. If the output is substantially
+                derived from the input, it is treated the same as manual copying.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Legal Gray Area</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Replicating a layout or design pattern exactly</strong>
+              </td>
+              <td>
+                Legal / ethically gray. Coding your own version of someone&apos;s
+                layout or section structure. Common in practice, but the closer the
+                replication, the more it strains community standards.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Replicating a design and using the same assets</strong>
+              </td>
+              <td>
+                Likely illegal / unethical. Using the same images, illustrations, or
+                licensed assets as the original crosses from inspiration into
+                potential infringement.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Generally Legal / Depends on Degree</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong
+                  >Inspiration — copying designs with an original spin</strong
+                >
+              </td>
+              <td>
+                Legal / likely ethical / widely practiced. Screenshotting a section
+                or layout, coding it with different assets, colors, and styling.
+                The degree of difference matters.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Reselling open-source templates with minor changes</strong>
+              </td>
+              <td>
+                Legal / unethical. Taking an open-source UI kit, rebranding it,
+                and selling with minimal changes.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Reselling open-source templates with major changes</strong>
+              </td>
+              <td>
+                Legal / likely ethical. Significantly modifying layout, styling, or
+                components before selling.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong
+                  >Aggregating/distributing open-source work without adding value</strong
+                >
+              </td>
+              <td>
+                Legal / could be distasteful. Bundling many open-source templates
+                without improvement to drive traffic or profit.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong
+                  >Aggregating/distributing open-source work with added value</strong
+                >
+              </td>
+              <td>
+                Legal / ethical. Curating templates, adding components, optimizing
+                UX, or creating a cohesive library.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong
+                  >Shipping work produced by a contractor that contains infringement</strong
+                >
+              </td>
+              <td>
+                Depends on response. The member is responsible for work published
+                under their name, regardless of who produced it. What matters is how
+                the member responds when the issue is identified — prompt removal
+                and good-faith resolution preserve standing.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Keep In Mind</h3>
+        <ul>
+          <li>
+            <strong>Legality and ethics are not the same thing.</strong> Something
+            can be legal but still violate the standards of this community.
+          </li>
+          <li>
+            <strong>Similarity alone is not infringement.</strong> When assessing
+            whether work has been copied, degree matters. Many designs in this
+            industry look similar — that is a reality of working within shared
+            frameworks, trends, and conventions. The further someone moves from
+            the original in design, code, and assets, the more defensible their work
+            becomes. If your concern does not fall in the &quot;clearly illegal&quot;
+            category, be honest with yourself about whether what you&apos;re
+            seeing is actual infringement or a similar design.
+            <p>
+              However, similar-looking designs can still have illegal origins. Ask
+              whether the work was built from your source code or files — if so,
+              the provenance involves infringement regardless of how different the end
+              result looks. Also consider scale: if you see hundreds of similar
+              designs appearing in a short timeframe, particularly with signs that AI
+              was used to remix your code, that pattern is worth investigating and
+              documenting before bringing it to the Collective.
+            </p>
+          </li>
+          <li>
+            <strong>Intent reveals character.</strong> Most creators in this space
+            can recognize the difference between a genuine mistake and a deliberate
+            grift. When concerns are raised, a good-faith actor will engage,
+            cooperate, and make it right. Bad actors will deny, deflect, go silent,
+            or dismiss the concern entirely. We evaluate not just what happened, but
+            how someone responds when it&apos;s brought to their attention.
+          </li>
+          <li>
+            <strong
+              >Emotional reactions are understandable but can backfire.</strong
+            >
+            When you discover what appears to be a copy of your work, the instinct to
+            react publicly and immediately is natural. But we have seen cases where
+            emotional public responses turned out to be wrong — and those responses
+            carry real risk, both legally and reputationally, for the person making
+            the claim. This should not discourage you from pursuing legitimate
+            concerns. But if you approach the situation calmly, assume best
+            intentions, and lead with evidence rather than accusations, your
+            outcomes will be better — even if your claim ultimately turns out to be
+            unfounded. A measured response protects your credibility whether
+            you&apos;re right or wrong.
+          </li>
+        </ul>
+      </Wrapper>
+    </Wrapper>
+  </section>
+</BaseLayout>
