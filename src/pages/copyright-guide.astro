@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import DocWithToc from "@/components/global/DocWithToc.astro";
 ---
 <BaseLayout
   title="Copyright Guide"
@@ -10,15 +11,15 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 >
   <section>
     <Wrapper variant="standard" class="py-12">
-      <Text
-        tag="h1"
-        variant="textBase"
-        class="text-foreground font-medium text-balance"
-      >
-        Guide to Copyright &amp; Infringement Claims
-      </Text>
-
-      <Wrapper variant="prose" class="mt-2 pt-2 border-t border-border">
+      <DocWithToc tocId="copyright-guide" tocMinLevel={3} tocMaxLevel={4}>
+        <Text
+          slot="hero"
+          tag="h1"
+          variant="textBase"
+          class="text-foreground font-medium text-balance"
+        >
+          Guide to Copyright &amp; Infringement Claims
+        </Text>
         <h3>How We Handle Claims</h3>
 
         <h4>Claims against members</h4>
@@ -127,175 +128,139 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
         </p>
 
         <h3>Clearly Illegal</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Scenario</th>
-              <th>Classification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Breaking the terms of a license</strong></td>
-              <td>Illegal. Always considered infringement.</td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Reselling a purchased template/code as-is</strong>
-              </td>
-              <td>
-                Illegal. Buying a competitor&apos;s template and selling it
-                unchanged.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="not-prose mt-2 list-none space-y-4 [&_li]:flex [&_li]:flex-col [&_li]:gap-1.5 [&_li>p:first-child]:text-foreground [&_li>p:last-child]:text-muted-foreground">
+          <li>
+            <p>
+              <strong>Breaking the terms of a license</strong>
+            </p>
+            <p>Illegal. Always considered infringement.</p>
+          </li>
+          <li>
+            <p>
+              <strong>Reselling a purchased template/code as-is</strong>
+            </p>
+            <p>
+              Illegal. Buying a competitor&apos;s template and selling it
+              unchanged.
+            </p>
+          </li>
+        </ul>
 
         <h3>Likely Illegal / Unethical</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Scenario</th>
-              <th>Classification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <strong
-                  >Slightly modifying a purchased template and reselling</strong
-                >
-              </td>
-              <td>
-                Likely illegal / unethical. Changing a few colors or images and
-                marketing it as your own.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong
-                  >Using AI to remix purchased template/code and reselling</strong
-                >
-              </td>
-              <td>
-                Likely illegal / likely unethical. Inputting competitor code into
-                AI, tweaking the output, and selling it. The use of AI as an
-                intermediary does not change the underlying obligation to respect
-                licenses and intellectual property. If the output is substantially
-                derived from the input, it is treated the same as manual copying.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="not-prose mt-2 list-none space-y-4 [&_li]:flex [&_li]:flex-col [&_li]:gap-1.5 [&_li>p:first-child]:text-foreground [&_li>p:last-child]:text-muted-foreground">
+          <li>
+            <p>
+              <strong>Slightly modifying a purchased template and reselling</strong>
+            </p>
+            <p>
+              Likely illegal / unethical. Changing a few colors or images and
+              marketing it as your own.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Using AI to remix purchased template/code and reselling</strong>
+            </p>
+            <p>
+              Likely illegal / likely unethical. Inputting competitor code into
+              AI, tweaking the output, and selling it. The use of AI as an
+              intermediary does not change the underlying obligation to respect
+              licenses and intellectual property. If the output is substantially
+              derived from the input, it is treated the same as manual copying.
+            </p>
+          </li>
+        </ul>
 
         <h3>Legal Gray Area</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Scenario</th>
-              <th>Classification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <strong>Replicating a layout or design pattern exactly</strong>
-              </td>
-              <td>
-                Legal / ethically gray. Coding your own version of someone&apos;s
-                layout or section structure. Common in practice, but the closer the
-                replication, the more it strains community standards.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Replicating a design and using the same assets</strong>
-              </td>
-              <td>
-                Likely illegal / unethical. Using the same images, illustrations, or
-                licensed assets as the original crosses from inspiration into
-                potential infringement.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="not-prose mt-2 list-none space-y-4 [&_li]:flex [&_li]:flex-col [&_li]:gap-1.5 [&_li>p:first-child]:text-foreground [&_li>p:last-child]:text-muted-foreground">
+          <li>
+            <p>
+              <strong>Replicating a layout or design pattern exactly</strong>
+            </p>
+            <p>
+              Legal / ethically gray. Coding your own version of someone&apos;s
+              layout or section structure. Common in practice, but the closer the
+              replication, the more it strains community standards.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Replicating a design and using the same assets</strong>
+            </p>
+            <p>
+              Likely illegal / unethical. Using the same images, illustrations, or
+              licensed assets as the original crosses from inspiration into
+              potential infringement.
+            </p>
+          </li>
+        </ul>
 
         <h3>Generally Legal / Depends on Degree</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Scenario</th>
-              <th>Classification</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <strong
-                  >Inspiration — copying designs with an original spin</strong
-                >
-              </td>
-              <td>
-                Legal / likely ethical / widely practiced. Screenshotting a section
-                or layout, coding it with different assets, colors, and styling.
-                The degree of difference matters.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Reselling open-source templates with minor changes</strong>
-              </td>
-              <td>
-                Legal / unethical. Taking an open-source UI kit, rebranding it,
-                and selling with minimal changes.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong>Reselling open-source templates with major changes</strong>
-              </td>
-              <td>
-                Legal / likely ethical. Significantly modifying layout, styling, or
-                components before selling.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong
-                  >Aggregating/distributing open-source work without adding value</strong
-                >
-              </td>
-              <td>
-                Legal / could be distasteful. Bundling many open-source templates
-                without improvement to drive traffic or profit.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong
-                  >Aggregating/distributing open-source work with added value</strong
-                >
-              </td>
-              <td>
-                Legal / ethical. Curating templates, adding components, optimizing
-                UX, or creating a cohesive library.
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <strong
-                  >Shipping work produced by a contractor that contains infringement</strong
-                >
-              </td>
-              <td>
-                Depends on response. The member is responsible for work published
-                under their name, regardless of who produced it. What matters is how
-                the member responds when the issue is identified — prompt removal
-                and good-faith resolution preserve standing.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ul class="not-prose mt-2 list-none space-y-4 [&_li]:flex [&_li]:flex-col [&_li]:gap-1.5 [&_li>p:first-child]:text-foreground [&_li>p:last-child]:text-muted-foreground">
+          <li>
+            <p>
+              <strong>Inspiration — copying designs with an original spin</strong>
+            </p>
+            <p>
+              Legal / likely ethical / widely practiced. Screenshotting a section
+              or layout, coding it with different assets, colors, and styling.
+              The degree of difference matters.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Reselling open-source templates with minor changes</strong>
+            </p>
+            <p>
+              Legal / unethical. Taking an open-source UI kit, rebranding it,
+              and selling with minimal changes.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Reselling open-source templates with major changes</strong>
+            </p>
+            <p>
+              Legal / likely ethical. Significantly modifying layout, styling, or
+              components before selling.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong
+                >Aggregating/distributing open-source work without adding value</strong
+              >
+            </p>
+            <p>
+              Legal / could be distasteful. Bundling many open-source templates
+              without improvement to drive traffic or profit.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong
+                >Aggregating/distributing open-source work with added value</strong
+              >
+            </p>
+            <p>
+              Legal / ethical. Curating templates, adding components, optimizing
+              UX, or creating a cohesive library.
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong
+                >Shipping work produced by a contractor that contains infringement</strong
+              >
+            </p>
+            <p>
+              Depends on response. The member is responsible for work published
+              under their name, regardless of who produced it. What matters is how
+              the member responds when the issue is identified — prompt removal
+              and good-faith resolution preserve standing.
+            </p>
+          </li>
+        </ul>
 
         <h3>Keep In Mind</h3>
         <ul>
@@ -346,7 +311,7 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
             you&apos;re right or wrong.
           </li>
         </ul>
-      </Wrapper>
+      </DocWithToc>
     </Wrapper>
   </section>
 </BaseLayout>

@@ -2,6 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+import DocWithToc from "@/components/global/DocWithToc.astro";
 ---
 <BaseLayout
   title="Collective Charter"
@@ -10,14 +11,15 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 >
   <section>
     <Wrapper variant="standard" class="py-12">
-      <Text
-        tag="h1"
-        variant="textBase"
-        class="text-foreground font-medium text-balance"
-      >
-        Collective Charter
-      </Text>
-      <Wrapper variant="prose" class="mt-2 pt-2 border-t border-border">
+      <DocWithToc tocId="collective-charter" tocMinLevel={2} tocMaxLevel={2}>
+        <Text
+          slot="hero"
+          tag="h1"
+          variant="textBase"
+          class="text-foreground font-medium text-balance"
+        >
+          Collective Charter
+        </Text>
         <h2>Preamble</h2>
         <p>
           The UI Collective is a professional group for independent creators who
@@ -241,7 +243,7 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
           By joining the UI Collective, members confirm that they have read,
           understood, and agree to follow this Charter.
         </p>
-      </Wrapper>
+      </DocWithToc>
     </Wrapper>
   </section>
 </BaseLayout>

@@ -1,0 +1,49 @@
+---
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+interface Props {
+  tocId: string;
+  /** Minimum heading level to include (2 = h2, 3 = h3, …). */
+  tocMinLevel?: number;
+  /** Maximum heading level to include. Use 2–2 on long docs to list only top sections. */
+  tocMaxLevel?: number;
+}
+const { tocId, tocMinLevel = 2, tocMaxLevel = 4 } = Astro.props;
+---
+
+<div
+  class="lg:grid lg:grid-cols-[minmax(0,1fr)_12.5rem] xl:grid-cols-[minmax(0,1fr)_15rem] lg:gap-10 xl:gap-12 lg:items-start"
+>
+  <div class="min-w-0">
+    <slot name="hero" />
+    <!-- data-toc-root must be on a native element: Wrapper does not forward arbitrary attributes -->
+    <div
+      data-toc-root={tocId}
+      data-toc-min-level={tocMinLevel}
+      data-toc-max-level={tocMaxLevel}
+    >
+      <Wrapper
+        variant="prose"
+        class="mt-2 pt-2 border-t border-border [&_h2]:scroll-mt-28 [&_h3]:scroll-mt-28 [&_h4]:scroll-mt-28"
+      >
+        <slot />
+      </Wrapper>
+    </div>
+  </div>
+  <aside
+    class="hidden lg:block lg:sticky lg:top-36 -mt-3 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto lg:overscroll-contain"
+  >
+    <Text tag="p" variant="textBase" class="font-medium text-foreground">
+      On this page
+    </Text>
+    <nav aria-label="On this page" data-toc-nav-for={tocId}>
+      <ul class="mt-3 space-y-0 border-t border-border/80" data-toc-list></ul>
+    </nav>
+  </aside>
+</div>
+
+<script>
+  import { initTableOfContents } from "@/scripts/tableOfContents";
+  initTableOfContents();
+</script>
